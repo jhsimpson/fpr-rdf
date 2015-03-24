@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<rdf:RDF
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:ldp="http://www.w3.org/ns/ldp#"
+  xmlns:ore="http://www.openarchives.org/ore/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <rdf:Description rdf:about="http://archivematica.org/fpr#">
+    <dcterms:title xml:lang="en">Archivematica Format Policy Registry</dcterms:title>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-03-24</dcterms:modified>
+    <dcterms:publisher rdf:resource="http://www.artefactual.com/"/>
+    <rdfs:seeAlso rdf:resource="https://www.archivematica.org/wiki/Format_policies"/>
+    <rdfs:comment xml:lang="en">
+      Ontology for the Format Policy Registry, a mechanism for recording requirements
+      for digital preservation tasks</rdfs:comment>
+    <owl:versionInfo>2015/03/24</owl:versionInfo>
+  </rdf:Description>
+
+
+  <rdfs:Class rdf:about="http://archivematica.org/fpr#Format">
+    <rdfs:label xml:lang="en">Format</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A Format is a category of digital object.
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <rdfs:isDefinedBy rdf:resource="http://archivematica.org/fpr#"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://archivematica.org/fpr#formatVersion">
+    <rdfs:label xml:lang="en">Format</rdfs:label>
+    <rdfs:comment xml:lang="en">
+      A FormatVersion is a type of digital object. FormatsVersions can be identified by
+      extension, mime-type, or a format registry such as pronom.
+    </rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://archivematica.org/fpr#"/>
+  </rdfs:Class>
+
+  <rdf:Property rdf:about="http://archivematica.org/fpr#hasFormatVersion">
+    <rdfs:label xml:lang="en">has format version</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a FormatVersion contained by this Format.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://archivematica.org/fpr#Format"/>
+    <rdfs:range rdf:resource="http://archivematica.org/fpr#FormatVersion"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ldp#contains"/>
+    <rdfs:isDefinedBy rdf:resource="http://archivematica.org/fpr#"/>
+  </rdf:Property>
+
+</rdf:RDF>
